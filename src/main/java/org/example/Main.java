@@ -16,7 +16,7 @@ public class Main {
         URL resource = classLoader.getResource("inputFile.txt");
 
         if (resource == null) {
-            throw new IllegalArgumentException("Plik inputFile.txt nie został znaleziony!");
+            throw new IllegalArgumentException("file not found");
         }
 
         File file = new File(resource.getFile());
@@ -35,7 +35,7 @@ public class Main {
             outputText.append(entry.getKey()).append(" ").append(entry.getValue()).append("\n");
         }
 
-        FileUtils.writeStringToFile(new File("outputFile.txt"),outputText.toString(), StandardCharsets.UTF_8);
+        FileUtils.writeStringToFile(new File("outputFile.txt"),outputText.toString());
 
     }
 }
